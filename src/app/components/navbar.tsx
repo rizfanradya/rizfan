@@ -24,7 +24,9 @@ export default function Navbar() {
           >
             {listItem.map((doc) => (
               <li key={doc.name}>
-                <Link href={doc.href}>{doc.name}</Link>
+                <Link className="p-4" href={doc.href}>
+                  {doc.name}
+                </Link>
               </li>
             ))}
           </ul>
