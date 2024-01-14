@@ -2,6 +2,8 @@ import Image from "next/image";
 import Navbar from "./components/navbar";
 import TypewriterEffect from "./components/typewriter";
 import Link from "next/link";
+import ContactForm from "./components/contactForm";
+import Footer from "./components/footer";
 
 const skillLogo = [
   { name: "HTML", src: "/html.svg" },
@@ -169,10 +171,17 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <Link href={"/portfolio"} className="btn btn-accent btn-outline">
+            View All My Portfolio
+          </Link>
         </div>
 
-        <div></div>
+        <div id="contact" className="py-28 grid gap-10 justify-center">
+          <h1 className="text-center text-4xl font-semibold">Contact Me</h1>
+          <ContactForm />
+        </div>
       </div>
+      <Footer />
     </>
   );
 }
