@@ -1,59 +1,37 @@
 "use client";
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-
-type Inputs = { name: string; email: string; message: string };
+import { useForm } from "@formspree/react";
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm<Inputs>();
-  const [buttonSubmit, setButtonSubmit] = useState<boolean>(false);
-
-  const onSubmit: SubmitHandler<Inputs> = async (e) => {
-    try {
-      setButtonSubmit(true);
-      console.log(e);
-      setButtonSubmit(false);
-      alert("pesan anda telah dikirim !!");
-      window.location.reload();
-    } catch (error) {
-      console.log(error);
-      alert(`pesan anda "GAGAL" dikirim !!`);
-      window.location.reload();
-    }
-  };
+  const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE ?? "";
+  const [state, handleSubmit] = useForm(formspreeEndpoint);
+  if (state.succeeded) {
+    alert("pesan anda telah terkirim !!");
+    window.location.reload();
+  }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="grid grid-cols-1 gap-4 sm:w-96"
-    >
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:w-96">
       <input
         className="input input-bordered input-sm"
         placeholder="Your Name"
         type="text"
+        name="name"
         required
-        {...register("name", { required: true })}
       />
       <input
         className="input input-bordered input-sm"
         placeholder="Your Email"
-        type="text"
+        type="email"
+        name="email"
         required
-        {...register("email", { required: true })}
       />
       <textarea
         className="textarea"
         placeholder="Message"
+        name="message"
         required
-        {...register("message", { required: true })}
       />
-      {buttonSubmit ? (
-        <div className="btn btn-neutral">
-          <span className="loading loading-spinner"></span>
-        </div>
-      ) : (
-        <button className="btn btn-success text-white">Send Message</button>
-      )}
+      <button className="btn btn-success text-white">Send Message</button>
     </form>
   );
 }
