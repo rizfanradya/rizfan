@@ -19,6 +19,16 @@ const skillLogo = [
   { name: "GIT", src: "/git.svg" },
 ];
 
+const portfolio = [
+  {
+    image: "/portfolio.png",
+    title: "My Portfolio",
+    techStack: "NEXTJS",
+    site: "/",
+    sourceCode: "https://github.com/rizfanradya/rizfan",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -116,6 +126,52 @@ export default function Home() {
             </p>
           </div>
         </div>
+
+        <div id="portfolio" className="pt-28 grid gap-10 justify-center">
+          <h1 className="text-center text-4xl font-semibold">My Portfolio</h1>
+          <div>
+            {portfolio.map((doc) => (
+              <div
+                key={doc.title}
+                className="card card-compact w-80 bg-base-100 shadow-xl overflow-hidden rounded-lg"
+              >
+                <Link href={doc.site}>
+                  <figure>
+                    <Image
+                      src={doc.image}
+                      alt={doc.title}
+                      width={500}
+                      height={500}
+                      className="w-full"
+                    />
+                  </figure>
+                </Link>
+                <div className="card-body">
+                  <h2 className="card-title">{doc.title}</h2>
+                  <p>Tech Stack : {doc.techStack}</p>
+                  <div className="card-actions justify-end">
+                    <Link
+                      href={doc.site}
+                      className="btn btn-primary btn-sm"
+                      target="blank"
+                    >
+                      Demo Site
+                    </Link>
+                    <Link
+                      href={doc.sourceCode}
+                      className="btn btn-secondary btn-outline btn-sm"
+                      target="blank"
+                    >
+                      Source Code
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div></div>
       </div>
     </>
   );
