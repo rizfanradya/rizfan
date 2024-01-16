@@ -39,8 +39,8 @@ export default function Home() {
         <div className="flex flex-col items-center text-center md:flex-row md:justify-evenly md:h-screen pt-10 md:pt-0">
           <Image
             src={"/main.png"}
-            width={100}
-            height={100}
+            width={200}
+            height={200}
             alt="profile"
             className="w-56 md:order-1"
           />
