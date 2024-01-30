@@ -40,7 +40,7 @@ export default function Admin() {
         </div>
       </div>
 
-      <div>CONTENT</div>
+      <div>content</div>
     </>
   );
 }
