@@ -3,19 +3,13 @@ import { auth } from "@/utils/firebase";
 import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { FiLogOut } from "react-icons/fi";
 
 export default function Admin() {
   const router = useRouter();
-  useEffect(() => {
-    function sessionLogin() {
-      auth.onAuthStateChanged((user) => {
-        if (!user) router.push(`/login-admin`);
-      });
-    }
-    sessionLogin();
-  }, [router]);
+  auth.onAuthStateChanged((user) => {
+    if (!user) router.push(`/login-admin`);
+  });
 
   async function handleLogout() {
     try {
