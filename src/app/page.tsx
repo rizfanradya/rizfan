@@ -4,7 +4,7 @@ import TypewriterEffect from "./components/typewriter";
 import Link from "next/link";
 import ContactForm from "./components/contactForm";
 import Footer from "./components/footer";
-import { retrieveData } from "@/utils/retrieveData";
+import PortfolioSection from "./components/portfolioSection";
 
 const skillLogo = [
   { name: "HTML", src: "/html.svg" },
@@ -23,8 +23,6 @@ const skillLogo = [
 ];
 
 export default async function Home() {
-  const portfolio = await retrieveData("portfolio");
-
   return (
     <>
       <Navbar />
@@ -129,47 +127,13 @@ export default async function Home() {
         {/* portfolio */}
         <div id="portfolio" className="pt-28 grid gap-10 justify-center">
           <h1 className="text-center text-4xl font-semibold">My Portfolio</h1>
-          <div>
-            {portfolio.map((doc: any) => (
-              <div
-                key={doc.title}
-                className="card card-compact w-80 bg-base-100 shadow-xl overflow-hidden rounded-lg"
-              >
-                <Link target="blank" href={doc.linkSite}>
-                  <figure>
-                    <Image
-                      src={doc.image}
-                      alt={doc.title}
-                      width={500}
-                      height={500}
-                      className="w-full"
-                    />
-                  </figure>
-                </Link>
-                <div className="card-body">
-                  <h2 className="card-title">{doc.title}</h2>
-                  <p>Tech Stack : {doc.description}</p>
-                  <div className="card-actions justify-end">
-                    <Link
-                      href={doc.linkSite}
-                      className="btn btn-primary btn-sm"
-                      target="blank"
-                    >
-                      Demo Site
-                    </Link>
-                    <Link
-                      href={doc.sourceCode}
-                      className="btn btn-secondary btn-outline btn-sm"
-                      target="blank"
-                    >
-                      Source Code
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-wrap justify-center gap-3">
+            <PortfolioSection />
           </div>
-          <Link href={"/portfolio"} className="btn btn-accent btn-outline">
+          <Link
+            href={"/portfolio"}
+            className="btn btn-accent btn-outline w-max m-auto"
+          >
             View All My Portfolio
           </Link>
         </div>

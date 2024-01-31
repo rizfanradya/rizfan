@@ -18,29 +18,26 @@ export default function DeletePortfolio({
       await deleteObject(ref(storage, image));
       await deleteDoc(doc(firestore, "portfolio", id));
       setButtonSubmit(false);
-      window.location.reload();
     } catch (error) {
-      console.log(error);
       setButtonSubmit(false);
       alert(`server error`);
-      window.location.reload();
     }
   }
 
   return (
-    <>
+    <div className="w-28">
       {buttonSubmit ? (
-        <div className="btn btn-neutral button-action">
+        <div className="btn btn-neutral button-action w-full">
           <span className="loading loading-spinner"></span>
         </div>
       ) : (
         <span
           onClick={() => handleDelete()}
-          className="btn btn-neutral button-action"
+          className="btn btn-neutral button-action w-full"
         >
           <MdDelete size="1.2em" /> Delete
         </span>
       )}
-    </>
+    </div>
   );
 }

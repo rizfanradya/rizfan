@@ -1,11 +1,22 @@
-import { collection, getDocs } from "firebase/firestore";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { collection, onSnapshot } from "firebase/firestore";
 import { firestore } from "./firebase";
+import { useState, useEffect } from "react";
 
-export async function retrieveData(collectionName: string) {
-  const querySnapshot = await getDocs(collection(firestore, collectionName));
-  const response = querySnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-  return response;
+export function retrieveData(collectionName: string) {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const collectionRef = collection(firestore, collectionName);
+    const unsubscribe = onSnapshot(collectionRef, (querySnapshot) => {
+      const response: any = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setData(response);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, [collectionName]);
+  return data;
 }

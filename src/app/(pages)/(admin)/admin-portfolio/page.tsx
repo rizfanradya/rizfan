@@ -8,18 +8,10 @@ import { MdDelete } from "react-icons/md";
 import DeletePortfolio from "./deletePortfolio";
 
 export default function AdminPortfolio() {
-  const [getData, setGetData] = useState<any>([]);
   const [selectedUser, setSelectedUser] = useState<any>(null);
   const [isEditButtonVisible, setEditButtonVisible] = useState<boolean>(false);
   const [clickedRowIndex, setClickedRowIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    async function fetch() {
-      const data = await retrieveData("portfolio");
-      setGetData(data);
-    }
-    fetch();
-  }, []);
+  const portfolio = retrieveData("portfolio");
 
   const handleEditClick = (doc: any, index: number) => {
     setSelectedUser(doc);
@@ -51,7 +43,7 @@ export default function AdminPortfolio() {
           {isEditButtonVisible ? (
             <DeletePortfolio image={selectedUser.image} id={selectedUser.id} />
           ) : (
-            <span className="btn btn-disabled">
+            <span className="btn btn-disabled w-28">
               <MdDelete size="1.2em" /> Delete
             </span>
           )}
@@ -71,7 +63,7 @@ export default function AdminPortfolio() {
             </thead>
 
             <tbody className="text-slate-200">
-              {getData.map((doc: any, index: number) => (
+              {portfolio.map((doc: any, index: number) => (
                 <tr
                   key={doc.id}
                   onClick={() => handleEditClick(doc, index)}

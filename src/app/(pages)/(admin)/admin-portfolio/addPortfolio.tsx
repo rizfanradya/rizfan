@@ -17,6 +17,7 @@ type inputs = {
 export default function AddPortfolio() {
   const [buttonSubmit, setButtonSubmit] = useState<boolean>(false);
   const { register, handleSubmit, reset } = useForm<inputs>();
+  const [modal, setModal] = useState<boolean>();
 
   const onSubmit: SubmitHandler<inputs> = async (e) => {
     setButtonSubmit(true);
@@ -25,7 +26,6 @@ export default function AddPortfolio() {
       const storageRef = ref(storage, image);
       await uploadBytes(storageRef, e.image[0]);
       const downloadURL = await getDownloadURL(storageRef);
-
       await addDoc(collection(firestore, "portfolio"), {
         title: e.title,
         description: e.description,
@@ -33,23 +33,22 @@ export default function AddPortfolio() {
         sourceCode: e.sourceCode,
         image: downloadURL,
       });
-
       setButtonSubmit(false);
-      window.location.reload();
+      setModal(false);
     } catch (error) {
       setButtonSubmit(false);
-      console.log(error);
+      alert(`server error`);
     }
   };
 
   return (
     <div className="my-3">
-      <label htmlFor="my_modal_7" className="btn btn-neutral">
+      <div onClick={() => setModal(true)} className="btn btn-neutral">
         <IoIosAddCircle size={"1.5em"} />
         Add Portfolio
-      </label>
+      </div>
 
-      <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+      <input type="checkbox" className="modal-toggle" checked={modal} />
       <div className="modal" role="dialog">
         <div className="modal-box">
           <h1 className="text-center text-xl font-semibold mb-8">
@@ -106,11 +105,12 @@ export default function AddPortfolio() {
           </form>
         </div>
 
-        <label
+        <div
           className="modal-backdrop cursor-pointer"
-          onClick={() => reset()}
-          htmlFor="my_modal_7"
-        ></label>
+          onClick={() => {
+            reset(), setModal(false);
+          }}
+        ></div>
       </div>
     </div>
   );
