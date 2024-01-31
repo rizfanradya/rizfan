@@ -4,6 +4,7 @@ import TypewriterEffect from "./components/typewriter";
 import Link from "next/link";
 import ContactForm from "./components/contactForm";
 import Footer from "./components/footer";
+import { retrieveData } from "@/utils/retrieveData";
 
 const skillLogo = [
   { name: "HTML", src: "/html.svg" },
@@ -21,20 +22,13 @@ const skillLogo = [
   { name: "GIT", src: "/git.svg" },
 ];
 
-const portfolio = [
-  {
-    image: "/portfolio.png",
-    title: "My Portfolio",
-    techStack: "NEXTJS",
-    site: "/",
-    sourceCode: "https://github.com/rizfanradya/rizfan",
-  },
-];
+export default async function Home() {
+  const portfolio = await retrieveData("portfolio");
 
-export default function Home() {
   return (
     <>
       <Navbar />
+      {/* hero */}
       <div className="px-6">
         <div className="flex flex-col items-center text-center md:flex-row md:justify-evenly md:h-screen pt-10 md:pt-0">
           <Image
@@ -62,6 +56,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* about */}
         <div className="text-justify font-medium pt-28 grid gap-12" id="about">
           <h1 className="text-center text-4xl font-semibold">About Me</h1>
           <div className="flex flex-col gap-6 md:flex-row justify-around">
@@ -91,6 +86,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* skill */}
         <div id="skill" className="pt-28 grid gap-10 justify-center">
           <h1 className="text-center text-4xl font-semibold">My Skills</h1>
           <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 max-w-7xl">
@@ -113,6 +109,7 @@ export default function Home() {
           </ul>
         </div>
 
+        {/* experience */}
         <div
           id="experience"
           className="pt-28 grid gap-10 justify-center text-justify font-medium"
@@ -129,15 +126,16 @@ export default function Home() {
           </div>
         </div>
 
+        {/* portfolio */}
         <div id="portfolio" className="pt-28 grid gap-10 justify-center">
           <h1 className="text-center text-4xl font-semibold">My Portfolio</h1>
           <div>
-            {portfolio.map((doc) => (
+            {portfolio.map((doc: any) => (
               <div
                 key={doc.title}
                 className="card card-compact w-80 bg-base-100 shadow-xl overflow-hidden rounded-lg"
               >
-                <Link href={doc.site}>
+                <Link target="blank" href={doc.linkSite}>
                   <figure>
                     <Image
                       src={doc.image}
@@ -150,10 +148,10 @@ export default function Home() {
                 </Link>
                 <div className="card-body">
                   <h2 className="card-title">{doc.title}</h2>
-                  <p>Tech Stack : {doc.techStack}</p>
+                  <p>Tech Stack : {doc.description}</p>
                   <div className="card-actions justify-end">
                     <Link
-                      href={doc.site}
+                      href={doc.linkSite}
                       className="btn btn-primary btn-sm"
                       target="blank"
                     >
@@ -176,6 +174,7 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* contact */}
         <div id="contact" className="py-28 grid gap-10 justify-center">
           <h1 className="text-center text-4xl font-semibold">Contact Me</h1>
           <ContactForm />

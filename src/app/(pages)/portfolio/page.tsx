@@ -1,17 +1,10 @@
+import { retrieveData } from "@/utils/retrieveData";
 import Image from "next/image";
 import Link from "next/link";
 
-const portfolio = [
-  {
-    image: "/portfolio.png",
-    title: "My Portfolio",
-    techStack: "NEXTJS",
-    site: "/",
-    sourceCode: "https://github.com/rizfanradya/rizfan",
-  },
-];
+export default async function Portfolio() {
+  const portfolio = await retrieveData("portfolio");
 
-export default function Portfolio() {
   return (
     <div>
       <div className="fixed bg-base-100 navbar z-50">
@@ -21,12 +14,12 @@ export default function Portfolio() {
       </div>
 
       <div className="py-20 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
-        {portfolio.map((doc, i) => (
+        {portfolio.map((doc: any, i) => (
           <div
             key={i}
             className="card card-compact bg-base-100 shadow-xl overflow-hidden rounded-lg"
           >
-            <Link href={doc.site}>
+            <Link target="blank" href={doc.linkSite}>
               <figure>
                 <Image
                   src={doc.image}
@@ -39,10 +32,10 @@ export default function Portfolio() {
             </Link>
             <div className="card-body">
               <h2 className="card-title">{doc.title}</h2>
-              <p>Tech Stack : {doc.techStack}</p>
+              <p>Tech Stack : {doc.description}</p>
               <div className="card-actions justify-end">
                 <Link
-                  href={doc.site}
+                  href={doc.linkSite}
                   className="btn btn-primary btn-sm"
                   target="blank"
                 >

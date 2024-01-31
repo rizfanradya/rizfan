@@ -3,10 +3,10 @@ import { auth } from "@/utils/firebase";
 import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { FiLogOut } from "react-icons/fi";
 
-export default function Admin() {
+export default function AdminLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
   useEffect(() => {
     function sessionLogin() {
@@ -17,14 +17,6 @@ export default function Admin() {
     sessionLogin();
   }, [router]);
 
-  async function handleLogout() {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   return (
     <>
       <div className="navbar bg-base-100">
@@ -34,13 +26,13 @@ export default function Admin() {
           </Link>
         </div>
         <div className="navbar-end">
-          <span onClick={() => handleLogout()} className="btn btn-neutral">
+          <span onClick={() => signOut(auth)} className="btn btn-neutral">
             <FiLogOut size={"1.5em"} /> Logout
           </span>
         </div>
       </div>
 
-      <div>content</div>
+      {children}
     </>
   );
 }

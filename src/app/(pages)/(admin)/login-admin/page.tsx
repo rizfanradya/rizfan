@@ -20,7 +20,7 @@ export default function LoginAdmin() {
   useEffect(() => {
     function sessionLogin() {
       auth.onAuthStateChanged((user) => {
-        if (user) router.push(`/admin`);
+        if (user) router.push(`/admin-portfolio`);
       });
     }
     sessionLogin();
@@ -31,7 +31,7 @@ export default function LoginAdmin() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setButtonSubmit(false);
-      router.push(`/admin`);
+      router.push(`/admin-portfolio`);
       closeToast();
     } catch (error: any) {
       if (error.code === `auth/invalid-email`) {
