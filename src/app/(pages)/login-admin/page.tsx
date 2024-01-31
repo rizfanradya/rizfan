@@ -2,7 +2,7 @@
 import { auth } from "@/utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type inputs = {
@@ -17,9 +17,14 @@ export default function LoginAdmin() {
   const [invalidEmail, setInvalidEmail] = useState<boolean>(false);
   const [wrongPassword, setWrongPassword] = useState<boolean>(false);
 
-  auth.onAuthStateChanged((user) => {
-    if (user) router.push(`/admin`);
-  });
+  useEffect(() => {
+    function sessionLogin() {
+      auth.onAuthStateChanged((user) => {
+        if (user) router.push(`/admin`);
+      });
+    }
+    sessionLogin();
+  }, [router]);
 
   const handleLogin: SubmitHandler<inputs> = async ({ email, password }) => {
     setButtonSubmit(true);
