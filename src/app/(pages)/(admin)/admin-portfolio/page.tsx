@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import DeletePortfolio from "./deletePortfolio";
+import LoadingSpinner from "@/app/loadingSpinner";
 
 export default function AdminPortfolio() {
   const [selectedUser, setSelectedUser] = useState<any>(null);
@@ -37,61 +38,68 @@ export default function AdminPortfolio() {
 
   return (
     <AdminLayout>
-      <div className="mx-4">
-        <div className="flex items-center gap-3">
-          <AddPortfolio />
-          {isEditButtonVisible ? (
-            <DeletePortfolio image={selectedUser.image} id={selectedUser.id} />
-          ) : (
-            <span className="btn btn-disabled w-28">
-              <MdDelete size="1.2em" /> Delete
-            </span>
-          )}
-        </div>
+      {portfolio.length === 0 ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="mx-4">
+          <div className="flex items-center gap-3">
+            <AddPortfolio />
+            {isEditButtonVisible ? (
+              <DeletePortfolio
+                image={selectedUser.image}
+                id={selectedUser.id}
+              />
+            ) : (
+              <span className="btn btn-disabled w-28">
+                <MdDelete size="1.2em" /> Delete
+              </span>
+            )}
+          </div>
 
-        <div className="overflow-x-auto">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Link Site</th>
-                <th>Source Code</th>
-              </tr>
-            </thead>
-
-            <tbody className="text-slate-200">
-              {portfolio.map((doc: any, index: number) => (
-                <tr
-                  key={doc.id}
-                  onClick={() => handleEditClick(doc, index)}
-                  className={`hover:bg-slate-800 transition cursor-pointer ${
-                    clickedRowIndex === index && "bg-slate-800"
-                  }`}
-                >
-                  <td>{index + 1}</td>
-                  <td className="avatar">
-                    <span className="mask mask-squircle w-12 h-12">
-                      <Image
-                        src={doc.image}
-                        alt={doc.title}
-                        width={50}
-                        height={50}
-                      />
-                    </span>
-                  </td>
-                  <td>{doc.title}</td>
-                  <td>{doc.description}</td>
-                  <td>{doc.linkSite}</td>
-                  <td>{doc.sourceCode}</td>
+          <div className="overflow-x-auto">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Link Site</th>
+                  <th>Source Code</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody className="text-slate-200">
+                {portfolio.map((doc: any, index: number) => (
+                  <tr
+                    key={doc.id}
+                    onClick={() => handleEditClick(doc, index)}
+                    className={`hover:bg-slate-800 transition cursor-pointer ${
+                      clickedRowIndex === index && "bg-slate-800"
+                    }`}
+                  >
+                    <td>{index + 1}</td>
+                    <td className="avatar">
+                      <span className="mask mask-squircle w-12 h-12">
+                        <Image
+                          src={doc.image}
+                          alt={doc.title}
+                          width={50}
+                          height={50}
+                        />
+                      </span>
+                    </td>
+                    <td>{doc.title}</td>
+                    <td>{doc.description}</td>
+                    <td>{doc.linkSite}</td>
+                    <td>{doc.sourceCode}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      )}
     </AdminLayout>
   );
 }
