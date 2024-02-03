@@ -1,18 +1,15 @@
-import Link from "next/link";
-import CardPortfolio from "./cardPortfolio";
+import PortfolioCard from "./portfolioCard";
+import HeaderFooter from "@/app/headerFooter";
 
 export default function Portfolio() {
   return (
-    <div>
-      <div className="fixed bg-base-100 navbar z-50">
-        <Link href={"/"} className="btn">
-          {"<< GO BACK"}
-        </Link>
+    <HeaderFooter>
+      <div id="portfolio" className="pt-28 grid gap-10 justify-center">
+        <h1 className="text-center text-4xl font-semibold">My Portfolio</h1>
+        <div className="flex flex-wrap justify-center gap-3">
+          <PortfolioCard />
+        </div>
       </div>
-
-      <div className="py-20 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
-        <CardPortfolio />
-      </div>
-    </div>
+    </HeaderFooter>
   );
 }
