@@ -1,0 +1,12 @@
+1. mysql                       = http://89.116.20.146/phpmyadmin
+2. postgresql                  = http://89.116.20.146/pgadmin4
+
+1. backend surgery spring boot = http://89.116.20.146:8080/swagger-ui/index.html
+2. backend surgery golang      = http://89.116.20.146:8888/swagger/index.html
+3. backend pendamping          = http://89.116.20.146:8000/docs
+4. frontend surgery            = http://89.116.20.146:5170
+5. frontend pendamping         = http://89.116.20.146:5171
+6. rizfan                      = http://89.116.20.146:3000
+7. ujian cbt admin             = http://89.116.20.146:3001
+8. ujian cbt user              = http://89.116.20.146:3002
+9. point of sales restoran     = http://89.116.20.146:3003
