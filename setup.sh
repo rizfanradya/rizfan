@@ -37,9 +37,5 @@ sudo apt-get install python3
 sudo apt-get install npm
 nvm install --lts
 
-sudo apt-get install docker-ce
-sudo apt-get install docker-ce-cli
-sudo apt-get install containerd.io
-sudo apt-get install docker-buildx-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo apt-get install docker-compose
-sudo apt-get install docker-compose-plugin
