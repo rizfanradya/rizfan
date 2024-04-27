@@ -42,7 +42,7 @@ export default function Home() {
               programming.
             </p>
             <Link
-              href={"/contact"}
+              href={"#contact"}
               className="btn btn-primary w-max m-auto text-lg md:m-0"
             >
               Contact Me
