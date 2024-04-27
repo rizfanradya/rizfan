@@ -20,6 +20,23 @@ const skillLogo = [
   { name: "GIT", src: "/git.svg" },
 ];
 
+const portfolio = [
+  {
+    title: "My Portfolio",
+    description: "NEXTJS",
+    image: "mysite.png",
+    linkSite: "https://rizfan.vercel.app/",
+    sourceCode: "https://github.com/rizfanradya/rizfan",
+  },
+  {
+    title: "Web Top-up Game Online & Voucher",
+    description: "NEXTJS, MYSQL, MIDTRANS, APIGAMES",
+    image: "topupgame.png",
+    linkSite: "https://topup-game-beta.vercel.app/",
+    sourceCode: "https://github.com/rizfanradya/topup-game",
+  },
+];
+
 export default function Home() {
   return (
     <HeaderFooter>
@@ -119,7 +136,7 @@ export default function Home() {
       <div id="portfolio" className="pt-28 grid gap-10 justify-center">
         <h1 className="text-center text-4xl font-semibold">My Portfolio</h1>
         <div className="flex flex-wrap justify-center gap-3">
-          {/* {portfolio.map((doc: any) => (
+          {portfolio.map((doc: any) => (
             <div
               key={doc.title}
               className="card card-compact w-80 bg-base-100 shadow-xl overflow-hidden rounded-lg"
@@ -127,7 +144,7 @@ export default function Home() {
               <Link target="blank" href={doc.linkSite}>
                 <figure>
                   <Image
-                    src={doc.image}
+                    src={`/portfolio/${doc.image}`}
                     alt={doc.title}
                     width={500}
                     height={500}
@@ -156,7 +173,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
 
