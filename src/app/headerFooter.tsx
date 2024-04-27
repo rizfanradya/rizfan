@@ -7,7 +7,7 @@ import { RiMenu2Fill } from "react-icons/ri";
 const listItem = [
   { name: "Home", href: "/" },
   { name: "About", href: "#about" },
-  { name: "Skill", href: "#skill" },
+  // { name: "Skill", href: "#skill" },
   { name: "Experience", href: "#experience" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Contact", href: "#contact" },

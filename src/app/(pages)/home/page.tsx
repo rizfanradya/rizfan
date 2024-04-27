@@ -23,14 +23,14 @@ const skillLogo = [
 const portfolio = [
   {
     title: "My Portfolio",
-    description: "NEXTJS",
+    description: "NEXTJS, TAILWINDCSS",
     image: "mysite.png",
     linkSite: "https://rizfan.vercel.app/",
     sourceCode: "https://github.com/rizfanradya/rizfan",
   },
   {
     title: "Web Top-up Game Online & Voucher",
-    description: "NEXTJS, MYSQL, MIDTRANS, APIGAMES",
+    description: "NEXTJS, TAILWINDCSS, MYSQL, MIDTRANS, APIGAMES",
     image: "topupgame.png",
     linkSite: "https://topup-game-beta.vercel.app/",
     sourceCode: "https://github.com/rizfanradya/topup-game",
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="skill" className="pt-28 grid gap-10 justify-center">
+      {/* <div id="skill" className="pt-28 grid gap-10 justify-center">
         <h1 className="text-center text-4xl font-semibold">My Skills</h1>
         <ul className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 max-w-7xl">
           {skillLogo.map((doc) => (
@@ -116,7 +116,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
 
       <div
         id="experience"
