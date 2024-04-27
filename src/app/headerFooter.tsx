@@ -6,11 +6,11 @@ import { RiMenu2Fill } from "react-icons/ri";
 
 const listItem = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Skill", href: "/skills" },
-  { name: "Experience", href: "/experience" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "#about" },
+  { name: "Skill", href: "#skill" },
+  { name: "Experience", href: "#experience" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function HeaderFooter({ children }: { children: ReactNode }) {
