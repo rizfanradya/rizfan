@@ -17,9 +17,9 @@ https://askubuntu.com/questions/1491578/unable-to-install-mysqlclient-on-ubuntu-
 
 # CMD
 
-pg_restore -c -U db_user -W -F t -d db_name dump_file.tar
-screen -S name_sesi -d -m run_sesi
-git config user.name rizfanradya && git config user.email rizfankusuma@gmail.com
-find / -name "file.txt"
-source $HOME/.env_virt/bin/activate
-swag init -g cmd/api/main.go -o docs
+- pg_restore -c -U db_user -W -F t -d db_name dump_file.tar
+- screen -S name_sesi -d -m run_sesi
+- git config user.name rizfanradya && git config user.email rizfankusuma@gmail.com
+- find / -name "file.txt"
+- source $HOME/.env_virt/bin/activate
+- swag init -g cmd/api/main.go -o docs
