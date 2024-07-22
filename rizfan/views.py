@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpRequest
 
 
-def landing_page(request):
+def landing_page_view(request: HttpRequest):
     extra_context = {
         'list_item': [
             {'name': 'Home', 'href': '/'},

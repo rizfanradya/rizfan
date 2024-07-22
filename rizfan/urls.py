@@ -19,7 +19,7 @@ from django.urls import path, re_path
 from django.conf import settings
 from django.views.static import serve
 from django.views.generic import RedirectView
-from .views import landing_page
+from .views import landing_page_view
 
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(
@@ -27,5 +27,5 @@ urlpatterns = [
     re_path('static/(?P<path>.*)', serve,
             {'document_root': settings.STATIC_ROOT}),
     path('admin/', admin.site.urls),
-    path('', landing_page, name='landing_page'),
+    path('', landing_page_view, name='landing_page'),
 ]
