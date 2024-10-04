@@ -24,3 +24,5 @@ https://askubuntu.com/questions/1491578/unable-to-install-mysqlclient-on-ubuntu-
 - source $HOME/.env_virt/bin/activate
 - swag init -g cmd/api/main.go -o docs
 - php -S 0.0.0.0:3000 -t your_folder/
+- docker ps -a && docker volume ls && docker images
+- 
