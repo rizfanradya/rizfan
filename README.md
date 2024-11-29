@@ -25,4 +25,9 @@ https://askubuntu.com/questions/1491578/unable-to-install-mysqlclient-on-ubuntu-
 - swag init -g cmd/api/main.go -o docs
 - php -S 0.0.0.0:3000 -t your_folder/
 - docker ps -a && docker volume ls && docker images
+- echo "\$i++; 
+\$cfg['Servers'][\$i]['host'] = '89.116.20.146';
+\$cfg['Servers'][\$i]['user'] = 'hctm_surgery';
+\$cfg['Servers'][\$i]['password'] = 'vEf6sk98f2bcukaPD4nXCraSXstt2zvnWpeomg8LIH0t0t8LJZ';
+\$cfg['Servers'][\$i]['auth_type'] = 'cookie';" >> config.inc.php
 - 
