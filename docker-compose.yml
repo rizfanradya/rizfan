@@ -51,7 +51,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=root@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=root
       - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=0
-      - PGADMIN_CONFIG_ALLOW_SAVE_PASSWORD=TRUE
+      - PGADMIN_CONFIG_ALLOW_SAVE_PASSWORD=True
       - TZ=Asia/Jakarta
     ports:
       - "5050:80"
