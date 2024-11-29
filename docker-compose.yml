@@ -30,7 +30,7 @@ services:
 
   # PostgreSQL Database
   postgres:
-    image: postgres:latest
+    image: postgres:15.10
     container_name: postgres_db
     environment:
       POSTGRES_USER: root
