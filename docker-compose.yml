@@ -54,7 +54,10 @@ services:
     depends_on:
       - postgres
     restart: always
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
   mysql_data:
   postgres_data:
+  pgadmin_data:
