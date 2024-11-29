@@ -4,7 +4,6 @@ services:
   # MySQL Database
   mysql:
     image: mysql:latest
-    container_name: mysql_db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mysql
@@ -17,7 +16,6 @@ services:
   # phpMyAdmin for MySQL
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
     environment:
       PMA_HOST: mysql
       PMA_USER: root
@@ -30,12 +28,9 @@ services:
 
   # PostgreSQL Database
   postgres:
-    image: postgres:latest
-    container_name: postgres_db
+    image: postgres
     environment:
-      POSTGRES_USER: root
       POSTGRES_PASSWORD: root
-      POSTGRES_DB: postgres
     ports:
       - "5432:5432"
     volumes:
@@ -44,24 +39,16 @@ services:
 
   # pgAdmin for PostgreSQL
   pgadmin:
-    image: dpage/pgadmin4:6.9
-    container_name: pgadmin
+    image: dpage/pgadmin4
     environment:
-      - PGADMIN_LISTEN_PORT=80
-      - PGADMIN_DEFAULT_EMAIL=root@gmail.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=0
-      - PGADMIN_CONFIG_ALLOW_SAVE_PASSWORD=True
-      - TZ=Asia/Jakarta
+      PGADMIN_DEFAULT_EMAIL: root@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
     depends_on:
       - postgres
     restart: always
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
   mysql_data:
   postgres_data:
-  pgadmin_data:
