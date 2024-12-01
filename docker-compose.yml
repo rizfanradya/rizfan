@@ -17,7 +17,7 @@ services:
   phpmyadmin:
     image: phpmyadmin
     environment:
-      PMA_HOSTS: mysql
+      PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: root
       PMA_ARBITRARY: 1
