@@ -17,13 +17,10 @@ services:
   phpmyadmin:
     image: phpmyadmin
     environment:
-      PMA_HOSTS: mysql,89.116.20.146:33062
-      PMA_VERBOSE: "Localhost Server,HCTM Surgery"
+      PMA_HOSTS: mysql
       PMA_USER: root
       PMA_PASSWORD: root
       PMA_ARBITRARY: 1
-      PHP_UPLOAD_MAX_FILESIZE: 64M
-      PHP_MAX_INPUT_VARS: 10000
     ports:
       - "8080:80"
     depends_on:
