@@ -1,5 +1,5 @@
 import { Typography } from "@/app/components/materialTailwind";
-import SkillCard from "@/app/components/skill-card";
+import SkillCard from "@/app/components/dashboard/skill-card";
 import { CiHashtag } from "react-icons/ci";
 import { FaEye, FaFingerprint } from "react-icons/fa6";
 import { HiMiniRectangleGroup, HiSwatch } from "react-icons/hi2";

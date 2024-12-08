@@ -11,6 +11,10 @@ import {
   Radio,
   Textarea,
   IconButton,
+  Dialog,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
 } from "@material-tailwind/react";
 
 export {
@@ -24,4 +28,8 @@ export {
   Radio,
   Textarea,
   IconButton,
+  Dialog,
+  DialogBody,
+  DialogHeader,
+  DialogFooter,
 };

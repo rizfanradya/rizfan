@@ -1,4 +1,4 @@
-import Footer from "@/app/components/footer";
+import Footer from "@/app/components/dashboard/footer";
 import Clients from "./clients";
 import ContactForm from "./contact-form";
 import Hero from "./hero";

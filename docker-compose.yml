@@ -5,12 +5,12 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_USER: hctm_surgery
-      MYSQL_DATABASE: hctm_surgery
+      MYSQL_USER: rizfan
+      MYSQL_DATABASE: rizfan
       MYSQL_ROOT_PASSWORD: vEf6sk98f2bcukaPD4nXCraSXstt2zvnWpeomg8LIH0t0t8LJZ
       MYSQL_PASSWORD: vEf6sk98f2bcukaPD4nXCraSXstt2zvnWpeomg8LIH0t0t8LJZ
     ports:
-      - "33062:3306"
+      - "33065:3306"
     volumes:
       - db_data_mysql:/var/lib/mysql
     healthcheck:
@@ -21,10 +21,10 @@ services:
 
   backend:
     build:
-      context: ./backend_surgery_fastapi
+      context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8001:8001"
+      - "8003:8003"
     restart: always
     volumes:
       - backend_uploads:/app/uploads
@@ -34,10 +34,10 @@ services:
 
   frontend:
     build:
-      context: ./frontend_surgery
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "3001:3001"
+      - "3002:3002"
     restart: always
 
 volumes:

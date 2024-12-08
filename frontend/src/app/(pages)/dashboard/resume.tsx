@@ -1,5 +1,5 @@
 import { Button, Typography } from "@/app/components/materialTailwind";
-import ResumeItem from "@/app/components/resume-item";
+import ResumeItem from "@/app/components/dashboard/resume-item";
 import { FaArrowRightLong, FaPuzzlePiece } from "react-icons/fa6";
 import { HiChartBar, HiCursorArrowRays } from "react-icons/hi2";
 

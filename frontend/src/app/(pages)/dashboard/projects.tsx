@@ -1,5 +1,5 @@
 import { Typography } from "@/app/components/materialTailwind";
-import ProjectCard from "@/app/components/project-card";
+import ProjectCard from "@/app/components/dashboard/project-card";
 
 export default function Projects() {
   const PROJECTS = [

@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import List
 from datetime import datetime
+from .unit import UnitSchema
 
 
 class FinancialRecordsSchema(BaseModel):
@@ -14,18 +15,22 @@ class FinancialRecordsSchema(BaseModel):
 
 class BaseSchema(FinancialRecordsSchema):
     id: int
+    unit: UnitSchema
 
     class Config:
         from_attributes = True
 
 
-class BaseFinancialRecordsResponseSchema(FinancialRecordsSchema):
+class BaseFinancialRecordsResponseSchema(BaseSchema):
     total: float
 
 
 class FinancialRecordsResponseSchema(BaseModel):
     total_data: int
-    total: float
+    total_day: float
+    total_week: float
+    total_month: float
+    total_year: float
     data: List[BaseFinancialRecordsResponseSchema]
 
     class Config:

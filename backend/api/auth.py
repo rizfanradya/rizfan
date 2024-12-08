@@ -8,6 +8,7 @@ from models.user import User
 from utils.error_response import send_error_response
 import jwt
 import bcrypt
+from schemas.auth import RefreshTokenSchema
 
 router = APIRouter()
 
@@ -28,6 +29,7 @@ async def user_login(form_data: OAuth2PasswordRequestForm = Depends(), db: Sessi
             "id": user_info.id,  # type: ignore
             "access_token": access_token,
             "refresh_token": refresh_token,
+            "status": True,
             "role": user_info.role.role,  # type: ignore
             "detail": "Login success"
         }
@@ -45,13 +47,13 @@ async def user_login(form_data: OAuth2PasswordRequestForm = Depends(), db: Sessi
         )
 
 
-@router.post("/refresh_token/{refresh_token}")
-async def refresh_token(refresh_token: str, db: Session = Depends(get_db)):
+@router.post("/refresh_token")
+async def refresh_token(refresh_token: RefreshTokenSchema, db: Session = Depends(get_db)):
     if JWT_REFRESH_SECRET_KEY is None:
         send_error_response("Environment variable JWT SECRET KEY not set")
     try:
         decode_token = jwt.decode(
-            refresh_token,
+            refresh_token.refresh_token,
             JWT_REFRESH_SECRET_KEY,  # type: ignore
             algorithms=[ALGORITHM]
         )
