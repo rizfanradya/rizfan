@@ -29,5 +29,5 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - docker ps -a && docker volume ls && docker images
 - sudo certbot --nginx -d domain.com
 - sudo du -ah / | sort -rh | head -n 10
-- docker container prune && docker image prune -a && docker network prune && docker volume prune
+- docker container prune && docker image prune -a && docker network prune && docker volume prune && docker builder prune && docker system df
 - zip -r name.zip .
