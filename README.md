@@ -27,3 +27,4 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - swag init -g cmd/api/main.go -o docs
 - php -S 0.0.0.0:3000 -t your_folder/
 - docker ps -a && docker volume ls && docker images
+- sudo certbot --nginx -d domain.com
