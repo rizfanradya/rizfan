@@ -28,3 +28,6 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - php -S 0.0.0.0:3000 -t your_folder/
 - docker ps -a && docker volume ls && docker images
 - sudo certbot --nginx -d domain.com
+- sudo du -ah / | sort -rh | head -n 10
+- docker container prune && docker image prune -a && docker network prune && docker volume prune
+- zip -r name.zip .
