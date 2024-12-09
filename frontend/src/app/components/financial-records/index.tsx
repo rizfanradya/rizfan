@@ -109,41 +109,44 @@ export default function LayoutAdminFinanceRecords({
   }, []);
 
   useEffect(() => {
-    if (ACCESS_TOKEN) {
-      const decodedToken = jwtDecode(ACCESS_TOKEN);
-      if (decodedToken.exp) {
-        const currentTime = Math.floor(Date.now() / 1000);
-        const timeToExpire = decodedToken.exp - currentTime;
-        const timeoutId = setTimeout(async () => {
-          try {
-            const response = await axiosInstance.post(`refresh_token`, {
-              refresh_token: REFRESH_TOKEN,
-            });
-            if (typeof window !== "undefined") {
-              localStorage.setItem(
-                ACCESS_TOKEN_NAME,
-                response.data.access_token
-              );
-              localStorage.setItem(
-                REFRESH_TOKEN_NAME,
-                response.data.refresh_token
-              );
+    (async () => {
+      const REFRESH_TOKEN_VALUE = await REFRESH_TOKEN;
+      if (ACCESS_TOKEN) {
+        const decodedToken = jwtDecode(ACCESS_TOKEN);
+        if (decodedToken.exp) {
+          const currentTime = Math.floor(Date.now() / 1000);
+          const timeToExpire = decodedToken.exp - currentTime;
+          const timeoutId = setTimeout(async () => {
+            try {
+              const response = await axiosInstance.post(`refresh_token`, {
+                refresh_token: REFRESH_TOKEN_VALUE,
+              });
+              if (typeof window !== "undefined") {
+                localStorage.setItem(
+                  ACCESS_TOKEN_NAME,
+                  response.data.access_token
+                );
+                localStorage.setItem(
+                  REFRESH_TOKEN_NAME,
+                  response.data.refresh_token
+                );
+              }
+              window.location.reload();
+            } catch (error) {
+              console.log(error);
+              if (typeof window !== "undefined") {
+                localStorage.removeItem(ACCESS_TOKEN_NAME);
+                localStorage.removeItem(REFRESH_TOKEN_NAME);
+              }
+              setTimeout(() => {
+                window.location.href = "/financial-records/login";
+              }, 200);
             }
-            window.location.reload();
-          } catch (error) {
-            console.log(error);
-            if (typeof window !== "undefined") {
-              localStorage.removeItem(ACCESS_TOKEN_NAME);
-              localStorage.removeItem(REFRESH_TOKEN_NAME);
-            }
-            setTimeout(() => {
-              window.location.href = "/financial-records/login";
-            }, 200);
-          }
-        }, timeToExpire * 1000);
-        return () => clearTimeout(timeoutId);
+          }, timeToExpire * 1000);
+          return () => clearTimeout(timeoutId);
+        }
       }
-    }
+    })();
   }, []);
 
   const filteredLinkItems = linkItems().filter((item) =>
