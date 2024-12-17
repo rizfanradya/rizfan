@@ -1,7 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 
-export const BACKEND_FASTAPI = "http://89.116.20.146:8003/api/";
-// export const BACKEND_FASTAPI = "http://localhost:8003/api/";
+// export const BACKEND_FASTAPI = "http://89.116.20.146:8003/api/";
+export const BACKEND_FASTAPI = "http://localhost:8003/api/";
 
 export const ACCESS_TOKEN_NAME = "rizfan_access_token";
 export const REFRESH_TOKEN_NAME = "rizfan_refresh_token";

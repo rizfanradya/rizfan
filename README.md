@@ -31,3 +31,4 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - sudo du -ah / | sort -rh | head -n 10
 - docker container prune && docker image prune -a && docker network prune && docker volume prune && docker builder prune && docker system df
 - zip -r name.zip .
+- docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}" | sort -k3
