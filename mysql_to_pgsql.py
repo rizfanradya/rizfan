@@ -1,24 +1,46 @@
 import pandas as pd
-from sqlalchemy import create_engine, inspect
+from sqlalchemy import create_engine
 
-# 1. Koneksi ke MySQL dan PostgreSQL
-mysql_engine = create_engine(
-    "mysql+pymysql://root:root@localhost/hctm_surgery")
-pg_engine = create_engine(
-    "postgresql://postgres:root@localhost/hctm_surgery")
+# Konfigurasi Database
+DB_SOURCE = 'postgresql://postgres:root@localhost/hctm_surgery_2'
+DB_DESTINATION = 'postgresql://postgres:root@localhost/hctm_surgery'
 
-# 2. Ambil Daftar Semua Tabel dari MySQL
-inspector = inspect(mysql_engine)
-tables = inspector.get_table_names()
+EXPORT_FILE = 'exported_data.csv'
+SOURCE_TABLE = 'procedurename'
+DESTINATION_TABLE = 'procedure_name'
 
-# 3. Ekspor dan Impor Data
-for table in tables:
-    print(f"Processing table: {table}")
+# 1. Export Data dari Database Asal
 
-    # Ekspor dari MySQL
-    df = pd.read_sql(f"SELECT * FROM {table}", con=mysql_engine)
 
-    # Impor ke PostgreSQL (Buat tabel jika belum ada)
-    df.to_sql(table, con=pg_engine, if_exists='replace', index=False)
+def export_to_csv():
+    engine = create_engine(DB_SOURCE)
+    query = f"SELECT * FROM {SOURCE_TABLE}"
+    df = pd.read_sql(query, engine)
 
-    print(f"Table {table} imported successfully.")
+    # Transformasi Data
+    # df.drop(columns=['color'], inplace=True)
+
+    # Simpan ke CSV
+    df.to_csv(EXPORT_FILE, index=False)
+    print(
+        f"Data dari tabel '{SOURCE_TABLE}' berhasil diekspor ke '{EXPORT_FILE}'.")
+
+# 2. Import Data ke Database Tujuan
+
+
+def import_from_csv():
+    engine = create_engine(DB_DESTINATION)
+
+    # Baca CSV
+    df = pd.read_csv(EXPORT_FILE)
+
+    # Import ke Database
+    df.to_sql(DESTINATION_TABLE, engine, if_exists='append', index=False)
+    print(
+        f"Data berhasil diimpor ke tabel '{DESTINATION_TABLE}' di database tujuan.")
+
+
+# Eksekusi
+if __name__ == "__main__":
+    export_to_csv()
+    import_from_csv()
