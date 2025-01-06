@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    // int jumlah(int a, int b);
+    int jumlah(int a, int b);
     int pilihan;
     char ulang;
 
@@ -29,7 +29,7 @@ int main() {
                 cin >> bill1;
                 cout << "Masukkan Bilangan 2" << endl;
                 cin >> bill2;
-                hasil = bill1 + bill2;
+                hasil = (bill1, bill2);
                 cout << "Hasil Jumlah Adalah = " << hasil << endl;
                 cout << "====================" << endl;
                 cout << endl;
@@ -62,5 +62,8 @@ int main() {
     cout << "Terimakasih...";
     cout << endl;
     return 0;
-    // int jumlah(int a, int b);
 }
+
+int jumlah(int a, int b) {
+    return a + b;
+};
