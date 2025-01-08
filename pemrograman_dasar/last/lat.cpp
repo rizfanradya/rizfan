@@ -1,6 +1,7 @@
 #include <iostream>
 #include "menu.cpp"
 #include "jumlah.cpp"
+#include "tukar.cpp"
 
 using namespace std;
 
@@ -21,8 +22,7 @@ int main()
             jumlah();
             break;
         case 2:
-            cout << "TUKAR NILAI" << endl;
-            cout << "====================" << endl;
+            tukar();
             break;
         case 3:
             cout << "JUMLAH 2 BUAT MATRIK" << endl;

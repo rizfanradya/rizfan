@@ -4,7 +4,7 @@ using namespace std;
 void menu()
 {
   cout << "## Daftar Menu Prodi TI ##" << endl;
-  cout << "==========================" << endl;
+  cout << "====================================================" << endl;
   cout << "1. Jumlah 2 buah bilangan" << endl;
   cout << "2. Tukar Nilai" << endl;
   cout << "3. Tampil Genap" << endl;
