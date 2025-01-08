@@ -1,7 +1,10 @@
 #include <iostream>
-#include "menu.cpp"
-#include "jumlah.cpp"
-#include "tukar.cpp"
+#include "func/menu.cpp"
+#include "func/jumlah.cpp"
+#include "func/tukar_nilai.cpp"
+#include "func/tampil_genap.cpp"
+#include "func/hitung_usia.cpp"
+#include "func/hitung_nilai_mahasiswa.cpp"
 
 using namespace std;
 
@@ -22,23 +25,20 @@ int main()
             jumlah();
             break;
         case 2:
-            tukar();
+            tukar_nilai();
             break;
         case 3:
-            cout << "JUMLAH 2 BUAT MATRIK" << endl;
-            cout << "====================" << endl;
+            tampil_genap();
             break;
         case 4:
-            cout << "KALIKAN 2 BUAT MATRIK" << endl;
-            cout << "====================" << endl;
+            hitung_usia();
             break;
         case 5:
-            cout << "HITUNG FAKTORIAL" << endl;
-            cout << "====================" << endl;
+            hitung_nilai_mahasiswa();
             break;
         default:
             cout << "Menu Tidak Tersedia" << endl;
-            cout << "====================" << endl;
+            cout << "===================================" << endl;
         }
         cout << endl;
         cout << "Ingin Memilih Menu Lain (y/t)? ";

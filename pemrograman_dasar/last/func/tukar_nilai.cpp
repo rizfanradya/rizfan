@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
 
-void tukar()
+void tukar_nilai()
 {
-    int num1, num2;
     cout << "====================================================" << endl;
     cout << "TUKAR NILAI" << endl;
     cout << "====================================================" << endl;
+
+    int num1, num2;
 
     cout << "Masukkan angka pertama: ";
     cin >> num1;

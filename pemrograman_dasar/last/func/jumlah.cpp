@@ -3,10 +3,11 @@ using namespace std;
 
 void jumlah()
 {
-  int bill1, bill2, hasil;
   cout << "====================================================" << endl;
   cout << "JUMLAHKAN 2 BUAH BILANGAN" << endl;
   cout << "====================================================" << endl;
+
+  int bill1, bill2, hasil;
 
   cout << "Masukkan Bilangan 1: ";
   cin >> bill1;
