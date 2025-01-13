@@ -13,8 +13,6 @@ int main()
 
     do
     {
-        cout << "## Daftar Menu Prodi TI ##" << endl;
-        cout << "====================================================" << endl;
         cout << "1. Hitung Jumlah 2 Buah Bilang" << endl;
         cout << "2. Menukar Nilai 2 Variabel" << endl;
         cout << "3. Menghitung Faktorial Bilangan" << endl;
