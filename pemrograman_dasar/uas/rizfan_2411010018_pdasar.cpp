@@ -26,10 +26,6 @@ int main()
         switch (pilihan)
         {
         case 1:
-            cout << "====================================================" << endl;
-            cout << "JUMLAHKAN 2 BUAH BILANGAN" << endl;
-            cout << "====================================================" << endl;
-
             cout << "Masukkan Bilangan 1: ";
             cin >> bill1;
             cout << "Masukkan Bilangan 2: ";
@@ -41,10 +37,6 @@ int main()
             break;
 
         case 2:
-            cout << "====================================================" << endl;
-            cout << "TUKAR NILAI" << endl;
-            cout << "====================================================" << endl;
-
             cout << "Masukkan angka pertama: ";
             cin >> num1;
             cout << "Masukkan angka kedua: ";
@@ -66,10 +58,6 @@ int main()
             break;
 
         case 3:
-            cout << "====================================================" << endl;
-            cout << "HITUNG FAKTORIAL BILANGAN" << endl;
-            cout << "====================================================" << endl;
-
             cout << "Masukkan sebuah bilangan positif: ";
             cin >> num1;
 
@@ -89,10 +77,6 @@ int main()
             break;
 
         case 4:
-            cout << "====================================================" << endl;
-            cout << "TAMPILKAN BILANGAN GENAP" << endl;
-            cout << "====================================================" << endl;
-
             cout << "Masukkan batas angka: ";
             cin >> batas;
             cout << "Bilangan genap dari 1 hingga " << batas << " adalah: " << endl;
@@ -107,10 +91,6 @@ int main()
             break;
 
         case 5:
-            cout << "====================================================" << endl;
-            cout << "MENAMPILKAN JUMLAH MATRIK" << endl;
-            cout << "====================================================" << endl;
-
             cout << "Masukkan jumlah baris matriks: ";
             cin >> baris;
             cout << "Masukkan jumlah kolom matriks: ";
@@ -157,7 +137,6 @@ int main()
 
         default:
             cout << "Menu Tidak Tersedia" << endl;
-            cout << "===================================" << endl;
         }
 
         cout << endl;
