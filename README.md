@@ -36,3 +36,4 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - docker exec -it nama_container psql -U nama_database -d postgres -c "DROP DATABASE IF EXISTS nama_database;"
 - docker exec -it nama_container psql -U nama_database -d postgres -c "CREATE DATABASE nama_database;"
 - docker exec -it nama_container psql -U nama_user -d postgres -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'nama_database';"
+- echo "vm.overcommit_memory = 1" | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
