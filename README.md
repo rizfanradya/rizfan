@@ -38,3 +38,8 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - docker exec -it nama_container psql -U nama_user -d postgres -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'nama_database';"
 - echo "vm.overcommit_memory = 1" | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 - elasticsearch-reset-password -u elastic --url https://localhost:9200
+
+# apache kafka
+
+- cd \program\kafka_2.13-3.9.0 && bin\windows\kafka-server-start.bat config\kraft\server.properties
+- java -jar \program\kafka_2.13-3.9.0\kafdrop-4.1.0.jar --kafka.brokerConnect=localhost:9092
