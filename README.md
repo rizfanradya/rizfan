@@ -42,4 +42,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 # apache kafka
 
 - cd \program\kafka_2.13-3.9.0 && bin\windows\kafka-server-start.bat config\kraft\server.properties
+- cd \program\kafka_2.13-3.9.0 && bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+- cd \program\kafka_2.13-3.9.0 && bin\windows\connect-distributed.bat config\connect-distributed.properties
+- cd \program\kafka_2.13-3.9.0 && bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic postgres-db.public.role --from-beginning
 - java -jar \program\kafka_2.13-3.9.0\kafdrop-4.1.0.jar --kafka.brokerConnect=localhost:9092
