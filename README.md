@@ -20,12 +20,9 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 # CMD
 
 - pg_restore -c -U db_user -W -F t -d db_name dump_file.tar
-- screen -S name_sesi -d -m run_sesi
 - git config user.name rizfanradya && git config user.email rizfankusuma@gmail.com
 - find / -name "file.txt"
 - source $HOME/.env_virt/bin/activate
-- swag init -g cmd/api/main.go -o docs
-- php -S 0.0.0.0:3000 -t your_folder/
 - docker ps -a && docker volume ls && docker images
 - sudo certbot --nginx -d domain.com
 - sudo du -ah / | sort -rh | head -n 10
@@ -48,3 +45,10 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - cd \program\kafka_2.13-3.9.0 && bin\windows\connect-distributed.bat config\connect-distributed.properties
 - cd \program\kafka_2.13-3.9.0 && bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic postgres-db.public.role --from-beginning
 - java -jar \program\kafka_2.13-3.9.0\kafdrop-4.1.0.jar --kafka.brokerConnect=localhost:9092
+
+# create new user mysql in docker
+
+- docker exec -it nama_container mysql -u root -p
+- CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypassword';
+- GRANT ALL PRIVILEGES ON myapp_db.\* TO 'myuser'@'%';
+- FLUSH PRIVILEGES;
