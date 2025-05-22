@@ -1,8 +1,20 @@
-# default_server
+# amanahnurehsan.org
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	server_name amanahnurehsan.org;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+# tribasuki.net
+server {
+	listen 80;
+	listen [::]:80;
+	server_name tribasuki.net;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 	location / {
