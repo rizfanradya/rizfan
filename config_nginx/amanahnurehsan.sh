@@ -10,6 +10,40 @@ server {
 	}
 }
 
+# database
+# mysql phpmyadmin
+server {
+	listen 80;
+	listen [::]:80;
+	server_name db-mysql.amanahnurehsan.org;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+    proxy_pass http://localhost:8080/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-proto $scheme;
+    client_max_body_size 100M;
+  }
+}
+# postgresql pgadmin
+server {
+	listen 80;
+	listen [::]:80;
+	server_name db-postgresql.amanahnurehsan.org;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+    proxy_pass http://localhost:8081/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-proto $scheme;
+    client_max_body_size 100M;
+  }
+}
+
 # hypesindo
 # backend hypesindo
 server {
