@@ -4,7 +4,7 @@ services:
       restart: always
       ports:
         - "6379:6379"
-      command: redis-server --appendonly yes --save 60 1 --loglevel warning
+      command: redis-server --appendonly yes --save 60 1 --loglevel warning --replicaof no one
       volumes:
         - redis_data:/data
 
