@@ -1,0 +1,14 @@
+docker volume create n8n_data
+
+docker run -it --rm \
+ --name n8n \
+ -p 5678:5678 \
+ -e DB_TYPE=postgresdb \
+ -e DB_POSTGRESDB_DATABASE=n8n \
+ -e DB_POSTGRESDB_HOST=91.108.110.44 \
+ -e DB_POSTGRESDB_PORT=5432 \
+ -e DB_POSTGRESDB_USER=postgres \
+ -e DB_POSTGRESDB_SCHEMA=public \
+ -e DB_POSTGRESDB_PASSWORD=tkfnQYTaS5Ltmtmj7daZhuP9oZHH7yJmER5JNcf8MlVrmRxLzO \
+ -v n8n_data:/home/node/.n8n \
+ docker.n8n.io/n8nio/n8n
