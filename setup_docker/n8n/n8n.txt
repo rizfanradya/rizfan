@@ -1,6 +1,6 @@
 docker volume create n8n_data
 
-docker run -it --rm \
+docker run -d -it --rm \
  --name n8n \
  -p 5678:5678 \
  -e DB_TYPE=postgresdb \
@@ -12,3 +12,4 @@ docker run -it --rm \
  -e DB_POSTGRESDB_PASSWORD=tkfnQYTaS5Ltmtmj7daZhuP9oZHH7yJmER5JNcf8MlVrmRxLzO \
  -v n8n_data:/home/node/.n8n \
  docker.n8n.io/n8nio/n8n
+
