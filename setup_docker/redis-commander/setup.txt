@@ -1,0 +1,1 @@
+docker run --name redis-commander -d -p 8083:8081 rediscommander/redis-commander
