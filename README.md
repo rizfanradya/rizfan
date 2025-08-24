@@ -37,6 +37,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - elasticsearch-reset-password -u elastic --url https://localhost:9200
 - kotlinc Main.kt -include-runtime -d exec.jar && java -jar exec.jar
 - ngrok http http://localhost:8080
+- sudo netstat -tulnp | grep :80
 
 # apache kafka
 
