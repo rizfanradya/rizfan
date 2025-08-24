@@ -19,34 +19,13 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 
 # CMD
 
-- pg_restore -c -U db_user -W -F t -d db_name dump_file.tar
 - git config user.name rizfanradya && git config user.email rizfankusuma@gmail.com
 - find / -name "file.txt"
-- source $HOME/.env_virt/bin/activate
 - docker ps -a && docker volume ls && docker images
-- sudo certbot --nginx -d domain.com
-- sudo du -ah / | sort -rh | head -n 10
 - docker container prune && docker image prune -a && docker network prune && docker volume prune && docker builder prune && docker system df
 - zip -r name.zip .
-- docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}" | sort -k3
-- docker exec -it nama_container psql -U user_postgres -d postgres -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'nama_database' AND pid <> pg_backend_pid();"
-- docker exec -it nama_container psql -U nama_database -d postgres -c "DROP DATABASE IF EXISTS nama_database;"
-- docker exec -it nama_container psql -U nama_database -d postgres -c "CREATE DATABASE nama_database;"
-- docker exec -it nama_container psql -U nama_user -d postgres -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'nama_database';"
-- echo "vm.overcommit_memory = 1" | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-- elasticsearch-reset-password -u elastic --url https://localhost:9200
-- kotlinc Main.kt -include-runtime -d exec.jar && java -jar exec.jar
-- ngrok http http://localhost:8080
 - sudo netstat -tulnp | grep :80
 - sudo cat /etc/rancher/k3s/k3s.yaml | base64 -w 0
-
-# apache kafka
-
-- cd \program\kafka_2.13-3.9.0 && bin\windows\kafka-server-start.bat config\kraft\server.properties
-- cd \program\kafka_2.13-3.9.0 && bin\windows\zookeeper-server-start.bat config\zookeeper.properties
-- cd \program\kafka_2.13-3.9.0 && bin\windows\connect-distributed.bat config\connect-distributed.properties
-- cd \program\kafka_2.13-3.9.0 && bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic postgres-db.public.role --from-beginning
-- java -jar \program\kafka_2.13-3.9.0\kafdrop-4.1.0.jar --kafka.brokerConnect=localhost:9092
 
 # create new user mysql in docker
 
