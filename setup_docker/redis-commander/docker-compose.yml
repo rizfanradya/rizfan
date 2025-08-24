@@ -1,0 +1,6 @@
+services:
+  redis-commander:
+    image: rediscommander/redis-commander
+    restart: always
+    ports:
+      - "8083:8081"

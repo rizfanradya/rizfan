@@ -1,0 +1,12 @@
+services:
+  nextcloud:
+    image: nextcloud
+    restart: always
+    ports:
+      - "8082:80"
+    volumes:
+      - nextcloud_data:/var/www/html
+      # - /:/mnt/data:rw
+
+volumes:
+  nextcloud_data:

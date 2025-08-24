@@ -1,6 +1,7 @@
 services:
   mysql:
     image: mysql:latest
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: FeNr2MkiAumzE1vJdJcCBB2RxIBR3HvFBi7DlPiiDlQy432VYh
     ports:
@@ -10,6 +11,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    restart: always
     ports:
       - 8080:80
     environment:

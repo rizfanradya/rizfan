@@ -1,4 +1,0 @@
-docker run -d -p 8081:80 --name nextcloud -v /:/mnt/data:rw nextcloud
-
-/var/lib/docker/volumes/[volume_name]/_data/config/config.php
-trusted domain
