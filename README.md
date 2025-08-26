@@ -22,7 +22,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - git config user.name rizfanradya && git config user.email rizfankusuma@gmail.com
 - find / -name "file.txt"
 - docker ps -a && docker volume ls && docker images
-- docker container prune && docker image prune -a && docker network prune && docker volume prune && docker builder prune && docker system df
+- docker system prune -a --volumes -f && docker system df
 - zip -r name.zip .
 - sudo netstat -tulnp | grep :80
 - sudo cat /etc/rancher/k3s/k3s.yaml | base64 -w 0
