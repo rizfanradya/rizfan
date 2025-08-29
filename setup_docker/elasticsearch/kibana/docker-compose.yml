@@ -1,0 +1,10 @@
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:9.1.2
+    environment:
+      - ELASTICSEARCH_HOSTS=http://91.108.110.44:9200
+      - ELASTICSEARCH_USERNAME=kibana_system
+      - ELASTICSEARCH_PASSWORD=DeTKeMP63j1hNiRpymdxSproWdEPxB7Djq4QVIRzYCMYwHB4MG
+      - xpack.encryptedSavedObjects.encryptionKey=ScP5RMFL3nyO8IvWrKlvXl3syfSFnZM5
+    ports:
+      - "5601:5601"
