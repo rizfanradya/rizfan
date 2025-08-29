@@ -1,6 +1,7 @@
 services:
   connect:
     image: debezium/connect:2.7.3.Final
+    restart: always
     ports:
       - "8085:8083"
     environment:

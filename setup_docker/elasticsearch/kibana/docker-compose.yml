@@ -1,6 +1,7 @@
 services:
   kibana:
     image: docker.elastic.co/kibana/kibana:9.1.2
+    restart: always
     environment:
       - ELASTICSEARCH_HOSTS=http://91.108.110.44:9200
       - ELASTICSEARCH_USERNAME=kibana_system
