@@ -1,7 +1,5 @@
-# amanahnurehsan.org
+# default_server amanahnurehsan.org
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
 	server_name amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -10,10 +8,8 @@ server {
 	}
 }
 
-# tribasuki.net
+# default_server tribasuki.net
 server {
-	listen 80;
-	listen [::]:80;
 	server_name tribasuki.net;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -22,11 +18,8 @@ server {
 	}
 }
 
-# database
-# mysql phpmyadmin
+# phpmyadmin
 server {
-	listen 80;
-	listen [::]:80;
 	server_name db-mysql.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -39,10 +32,9 @@ server {
     client_max_body_size 100M;
   }
 }
-# postgresql pgadmin
+
+# pgadmin
 server {
-	listen 80;
-	listen [::]:80;
 	server_name db-postgresql.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -56,11 +48,30 @@ server {
   }
 }
 
+# n8n
+server {
+	server_name n8n.amanahnurehsan.org;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+        proxy_pass http://localhost:5678/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 3600;
+        proxy_send_timeout 3600;
+        client_max_body_size 100M;
+  }
+}
+
 # hypesindo
 # backend hypesindo
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-hypesindo.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -75,8 +86,6 @@ server {
 }
 # frontend hypesindo
 server {
-	listen 80;
-	listen [::]:80;
 	server_name hypesindo.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -93,8 +102,6 @@ server {
 # surgery
 # backend surgery
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-surgery.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -109,8 +116,6 @@ server {
 }
 # frontend surgery
 server {
-	listen 80;
-	listen [::]:80;
 	server_name surgery.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -127,8 +132,6 @@ server {
 # koperasi
 # backend koperasi
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-koperasi.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -143,8 +146,6 @@ server {
 }
 # frontend koperasi
 server {
-	listen 80;
-	listen [::]:80;
 	server_name koperasi.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -161,8 +162,6 @@ server {
 # keuangan
 # backend keuangan
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-keuangan.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -177,8 +176,6 @@ server {
 }
 # frontend keuangan
 server {
-	listen 80;
-	listen [::]:80;
 	server_name keuangan.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -195,8 +192,6 @@ server {
 # fakehadist
 # backend fakehadist
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-fakehadist.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -211,8 +206,6 @@ server {
 }
 # frontend fakehadist
 server {
-	listen 80;
-	listen [::]:80;
 	server_name fakehadist.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -229,8 +222,6 @@ server {
 # riverranger
 # backend riverranger
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-riverranger.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -245,8 +236,6 @@ server {
 }
 # frontend riverranger
 server {
-	listen 80;
-	listen [::]:80;
 	server_name riverranger.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -263,8 +252,6 @@ server {
 # voiceaibot
 # backend voiceaibot
 server {
-	listen 80;
-	listen [::]:80;
 	server_name api-voiceaibot.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -279,8 +266,6 @@ server {
 }
 # frontend voiceaibot
 server {
-	listen 80;
-	listen [::]:80;
 	server_name voiceaibot.amanahnurehsan.org;
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
@@ -291,5 +276,41 @@ server {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-proto $scheme;
     client_max_body_size 100M;
+  }
+}
+
+# music
+# backend music
+server {
+	server_name api-music.amanahnurehsan.org;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+    proxy_pass http://localhost:8007/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-proto $scheme;
+    client_max_body_size 100M;
+    proxy_read_timeout 1800;
+    proxy_connect_timeout 1800;
+    proxy_send_timeout 1800;
+  }
+}
+# frontend music
+server {
+	server_name music.amanahnurehsan.org;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+    proxy_pass http://localhost:4180/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-proto $scheme;
+    client_max_body_size 100M;
+    proxy_read_timeout 1800;
+    proxy_connect_timeout 1800;
+    proxy_send_timeout 1800;
   }
 }
