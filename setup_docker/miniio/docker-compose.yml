@@ -1,0 +1,13 @@
+services:
+  minio:
+    image: quay.io/minio/minio:latest
+    restart: always
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: 5Ti6XY1tPq6xpnw
+      MINIO_ROOT_PASSWORD: YGoc9gRCa8GXvZQeLPTuicYqXJa5v7DjD8ju7uPPqxOhJvz4cp
+    volumes:
+      - ./data:/data
+    command: server /data --console-address ":9001"
