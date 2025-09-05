@@ -33,3 +33,11 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypassword';
 - GRANT ALL PRIVILEGES ON myapp_db.\* TO 'myuser'@'%';
 - FLUSH PRIVILEGES;
+
+# miniio
+
+- wget https://dl.min.io/client/mc/release/linux-amd64/mc
+- chmod +x mc
+- sudo mv mc /usr/local/bin/
+- mc alias set localminio http://127.0.0.1:9000 5Ti6XY1tPq6xpnw YGoc9gRCa8GXvZQeLPTuicYqXJa5v7DjD8ju7uPPqxOhJvz4cp
+- mc anonymous set download localminio/music
