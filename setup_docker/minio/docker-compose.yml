@@ -1,20 +1,22 @@
 services:
-  postgres:
-    image: postgres:latest
+  minio:
+    image: quay.io/minio/minio:latest
     restart: always
-    environment:
-      POSTGRES_PASSWORD: tkfnQYTaS5Ltmtmj7daZhuP9oZHH7yJmER5JNcf8MlVrmRxLzO
     # ports:
-    #   - "5432:5432"
+    #   - "9000:9000"
+    environment:
+      MINIO_ROOT_USER: 5Ti6XY1tPq6xpnw
+      MINIO_ROOT_PASSWORD: YGoc9gRCa8GXvZQeLPTuicYqXJa5v7DjD8ju7uPPqxOhJvz4cp
+    volumes:
+      - ./data:/data
+    command: server /data
     labels:
       - "traefik.enable=true"
-      - "traefik.tcp.routers.postgres.rule=HostSNI(`postgresql.amanahnurehsan.org`)"
-      - "traefik.tcp.routers.postgres.entrypoints=postgres"
-      - "traefik.tcp.routers.postgres.tls=true"
-      - "traefik.tcp.routers.postgres.tls.certresolver=myresolver"
-      - "traefik.tcp.services.postgres.loadbalancer.server.port=5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - "traefik.tcp.routers.minio.rule=HostSNI(`s3.amanahnurehsan.org`)"
+      - "traefik.tcp.routers.minio.entrypoints=minio"
+      - "traefik.tcp.routers.minio.tls=true"
+      - "traefik.tcp.routers.minio.tls.certresolver=myresolver"
+      - "traefik.tcp.services.minio.loadbalancer.server.port=9000"
 
   traefik:
     image: traefik:v3.5.2
@@ -23,7 +25,7 @@ services:
       - "--providers.docker=true"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
-      - "--entrypoints.postgres.address=:5432"
+      - "--entrypoints.minio.address=:9000"
       - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
       - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
       - "--certificatesresolvers.myresolver.acme.email=rizfankusuma@gmail.com"
@@ -31,10 +33,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "5432:5432"
+      - "9000:9000"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./letsencrypt:/letsencrypt"
-
-volumes:
-  postgres_data:
