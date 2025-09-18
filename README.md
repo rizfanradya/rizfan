@@ -50,6 +50,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - MSI Afterburner
 - OBS Studio
 - TeamViewer
+- Telegram
 - Whatsapp
 - Discord
 - HWiNFO
