@@ -94,6 +94,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Pgadmin
 - MySql Workbench
 - Redis Insight
+- WinSCP
 - Android Studio
 - Visual Studio Code
 - Postman
