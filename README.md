@@ -90,7 +90,6 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Whatsapp
 - Brave
 - Discord
-- Github Desktop
 - Docker Desktop
 - Pgadmin
 - MySql Workbench
@@ -98,6 +97,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Android Studio
 - Visual Studio Code
 - Postman
+- Github Desktop
 - OBS Studio
 - File Manager
 - Realtek Audio Console
