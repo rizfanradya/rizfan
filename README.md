@@ -84,3 +84,21 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Microsoft Teams
 - Google Drive
 - Zoom
+
+# pinned app
+
+- Whatsapp
+- Brave
+- Discord
+- Github Desktop
+- Docker Desktop
+- Pgadmin
+- MySql Workbench
+- Redis Insight
+- Android Studio
+- Visual Studio Code
+- Postman
+- OBS Studio
+- File Manager
+- Realtek Audio Console
+- Task Manager
