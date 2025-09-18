@@ -60,6 +60,11 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 
 # software programming/coding
 
+- Java JDK
+- NodeJS
+- Python
+- Rust
+- PHP
 - Docker
 - Git
 - Github Desktop
@@ -70,11 +75,6 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Redis
 - Redis Insight
 - Minio S3
-- Java JDK
-- NodeJS
-- PHP
-- Python
-- Rust
 - WinScp
 
 # software office
