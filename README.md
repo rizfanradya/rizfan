@@ -76,6 +76,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Redis Insight
 - Minio S3
 - WinScp
+- Postman
 
 # software office
 
