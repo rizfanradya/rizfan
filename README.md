@@ -41,3 +41,45 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - sudo mv mc /usr/local/bin/
 - mc alias set localminio http://127.0.0.1:9000 5Ti6XY1tPq6xpnw YGoc9gRCa8GXvZQeLPTuicYqXJa5v7DjD8ju7uPPqxOhJvz4cp
 - mc anonymous set download localminio/music
+
+# software tools/others
+
+- Driver Mouse Gamen
+- Hard Disk Sentinel
+- Google Play Games
+- MSI Afterburner
+- OBS Studio
+- TeamViewer
+- Whatsapp
+- Discord
+- HWiNFO
+- 7-Zip
+- Steam
+- Brave
+- VLC
+
+# software programming/coding
+
+- Docker
+- Git
+- Github Desktop
+- Visual Studio Code
+- Android Studio
+- Postgresql
+- Mysql
+- Redis
+- Redis Insight
+- Minio S3
+- Java JDK
+- NodeJS
+- PHP
+- Python
+- Rust
+- WinScp
+
+# software office
+
+- Microsoft Office
+- Microsoft Teams
+- Google Drive
+- Zoom
