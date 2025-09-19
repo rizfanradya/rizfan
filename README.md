@@ -54,7 +54,10 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Telegram
 - Whatsapp
 - Discord
+- HWMonitor
 - HWiNFO
+- CPU Z
+- GPU Z
 - 7-Zip
 - Steam
 - Brave
