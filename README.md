@@ -44,6 +44,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 
 # software tools/others
 
+- Internet Download Manager
 - Driver Mouse Gamen
 - Hard Disk Sentinel
 - Google Play Games
