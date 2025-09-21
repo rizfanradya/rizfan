@@ -90,6 +90,10 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Google Drive
 - Zoom
 
+# software multimedia
+
+- Capcut
+
 # pinned app
 
 - Whatsapp
