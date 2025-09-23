@@ -85,9 +85,11 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 
 # software office
 
+- Publish or Perish
 - Microsoft Office
 - Microsoft Teams
 - Google Drive
+- Mendeley
 - Zoom
 
 # software multimedia
