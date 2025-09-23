@@ -89,6 +89,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - Microsoft Office
 - Microsoft Teams
 - Google Drive
+- FoxitPDF
 - Mendeley
 - Zoom
 
