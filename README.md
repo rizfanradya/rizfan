@@ -51,10 +51,11 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - MSI Afterburner
 - OBS Studio
 - TeamViewer
+- HWMonitor
 - Telegram
 - Whatsapp
+- Netflix
 - Discord
-- HWMonitor
 - HWiNFO
 - CPU Z
 - GPU Z
