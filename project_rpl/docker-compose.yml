@@ -7,4 +7,4 @@ services:
     volumes:
       - ./php-app:/var/www/html
     ports:
-      - "8009:8009"
+      - "8009:9000"

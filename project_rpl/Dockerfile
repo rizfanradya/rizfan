@@ -9,4 +9,4 @@ RUN apt-get update && apt-get install -y \
   && docker-php-ext-install pdo_mysql mbstring zip exif pcntl
 COPY . /var/www/html/
 WORKDIR /var/www/html/
-EXPOSE 8009
+EXPOSE 9000
