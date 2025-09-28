@@ -1,0 +1,112 @@
+
+:root {
+    --bs-primary: #3B82F6;
+    --bs-success: #10B981;
+    --bs-body-bg: #F3F4F6;
+    --bs-body-color: #1F2937;
+    --bs-font-sans-serif: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--bs-font-sans-serif);
+}
+
+.navbar {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.navbar-logo-img {
+    height: 32px;
+    margin-right: 4px;
+}
+
+.navbar.sticky-top {
+    z-index: 1030 !important;
+}
+
+/* Styling Kartu */
+.jasa-card {
+    border: none;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0.75rem;
+}
+.jasa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.rating-bintang {
+    color: #FBBF24;
+}
+
+/* Styling Riwayat Transaksi (Mobile) */
+.history-list-item {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+.history-body {
+    font-size: 0.9em;
+    color: #6B7280;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+}
+
+/* Tombol Sembunyikan/Tampilkan */
+.toggle-button {
+    font-size: 0.9em;
+}
+tr.riwayat-selesai-hidden, .history-list-item.riwayat-selesai-hidden {
+    display: none;
+}
+
+/* Tabel Responsif (Mode Kartu di Mobile) */
+@media (max-width: 768px) {
+    .table-responsive-stack thead {
+        display: none;
+    }
+    .table-responsive-stack tbody,
+    .table-responsive-stack tr,
+    .table-responsive-stack td {
+        display: block;
+        width: 100%;
+    }
+    .table-responsive-stack tr {
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: .375rem;
+        overflow: hidden;
+    }
+    .table-responsive-stack td {
+        padding-left: 50%;
+        position: relative;
+        text-align: right;
+        border: none;
+        border-bottom: 1px solid #eee;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    .table-responsive-stack td:last-child {
+        border-bottom: none;
+    }
+    .table-responsive-stack td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+}

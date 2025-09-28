@@ -70,7 +70,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - NodeJS
 - Python
 - Rust
-- PHP
+- Laragon
 - Docker
 - Git
 - Github Desktop
