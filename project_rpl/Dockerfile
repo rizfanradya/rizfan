@@ -7,6 +7,6 @@ RUN apt-get update && apt-get install -y \
   libonig-dev \
   libzip-dev \
   && docker-php-ext-install pdo_mysql mbstring zip exif pcntl
-COPY . /var/www/html/
+COPY ./app /var/www/html/
 WORKDIR /var/www/html/
 EXPOSE 9000
