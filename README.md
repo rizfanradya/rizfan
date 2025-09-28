@@ -46,12 +46,14 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 
 - Internet Download Manager
 - Driver Mouse Gamen
+- Elgato Stream Deck
 - Hard Disk Sentinel
 - Google Play Games
 - MSI Afterburner
 - OBS Studio
 - TeamViewer
 - HWMonitor
+- Voicemod
 - Telegram
 - Whatsapp
 - Netflix
