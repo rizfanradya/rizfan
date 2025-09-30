@@ -52,6 +52,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - MSI Afterburner
 - OBS Studio
 - TeamViewer
+- Speedtest
 - HWMonitor
 - Voicemod
 - Telegram
@@ -99,6 +100,7 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 # software multimedia
 
 - Capcut
+- Figma
 
 # pinned app
 
