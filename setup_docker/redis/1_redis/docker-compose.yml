@@ -2,38 +2,38 @@ services:
   redis:
       image: redis:latest
       restart: always
-      # ports:
-      #   - "6379:6379"
+      ports:
+        - "6379:6379"
       command: redis-server --appendonly yes --save 60 1 --loglevel warning --replicaof no one
       volumes:
         - redis_data:/data
-      labels:
-        - "traefik.enable=true"
-        - "traefik.tcp.routers.redis.rule=HostSNI(`redis.amanahnurehsan.org`)"
-        - "traefik.tcp.routers.redis.entrypoints=redis"
-        - "traefik.tcp.routers.redis.tls=true"
-        - "traefik.tcp.routers.redis.tls.certresolver=myresolver"
-        - "traefik.tcp.services.redis.loadbalancer.server.port=6379"
+  #     labels:
+  #       - "traefik.enable=true"
+  #       - "traefik.tcp.routers.redis.rule=HostSNI(`redis.amanahnurehsan.org`)"
+  #       - "traefik.tcp.routers.redis.entrypoints=redis"
+  #       - "traefik.tcp.routers.redis.tls=true"
+  #       - "traefik.tcp.routers.redis.tls.certresolver=myresolver"
+  #       - "traefik.tcp.services.redis.loadbalancer.server.port=6379"
 
-  traefik:
-    image: traefik:v3.5.2
-    restart: always
-    command:
-      - "--providers.docker=true"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--entrypoints.redis.address=:6379"
-      - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
-      - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
-      - "--certificatesresolvers.myresolver.acme.email=rizfankusuma@gmail.com"
-      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-    ports:
-      - "80:80"
-      - "443:443"
-      - "6379:6379"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./letsencrypt:/letsencrypt"
+  # traefik:
+  #   image: traefik:v3.5.2
+  #   restart: always
+  #   command:
+  #     - "--providers.docker=true"
+  #     - "--entrypoints.web.address=:80"
+  #     - "--entrypoints.websecure.address=:443"
+  #     - "--entrypoints.redis.address=:6379"
+  #     - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
+  #     - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+  #     - "--certificatesresolvers.myresolver.acme.email=rizfankusuma@gmail.com"
+  #     - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #     - "6379:6379"
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  #     - "./letsencrypt:/letsencrypt"
 
 volumes:
   redis_data:
