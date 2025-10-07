@@ -1,0 +1,19 @@
+services:
+  redis:
+      image: redis:latest
+      restart: always
+      ports:
+        - "6379:6379"
+      command: >
+        redis-server
+        --appendonly yes
+        --save 60 1 --loglevel warning
+        --maxmemory 512mb
+        --maxmemory-policy allkeys-lru
+        --requirepass "dDUdWkYM9Q5GbvhrUtUvjKAt6N4kL3bHbcArJqTKyjRoVn8A8E"
+        --replicaof no one
+      volumes:
+        - redis_data:/data
+
+volumes:
+  redis_data:
