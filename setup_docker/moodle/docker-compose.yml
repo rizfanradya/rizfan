@@ -1,0 +1,13 @@
+services:
+  moodleapp:
+    build:
+      context: .
+    image: moodleapp:1.0
+    restart: always
+    ports:
+      - 8084:80
+    volumes:
+      - moodledata:/var/www/moodledata
+
+volumes:
+  moodledata:
