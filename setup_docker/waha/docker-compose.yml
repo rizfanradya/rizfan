@@ -4,11 +4,40 @@ services:
     ports:
       - "3000:3000"
     environment:
+      WAHA_APPS_ENABLED: "true"
       WAHA_API_KEY: 1SpkA0oE44ZYVgcvfyR7QzY8wAVPKv8PcQUAfa4wQpJmcXw2Eb
+      WAHA_API_KEY_PLAIN: 6x9s5d896dFmmR5xfrUU9503cPBtQDtbwL6S1TifflAMhVdGcC
       WAHA_DASHBOARD_USERNAME: nGtM8XUEB4
       WAHA_DASHBOARD_PASSWORD: wE1785DvJW3hzCxOxlDQN7P2wwouqwVOBumXQYMzoexzeRYLki
       WHATSAPP_SWAGGER_USERNAME: nGtM8XUEB4
       WHATSAPP_SWAGGER_PASSWORD: wE1785DvJW3hzCxOxlDQN7P2wwouqwVOBumXQYMzoexzeRYLki
+      REDIS_URL: redis://:dDUdWkYM9Q5GbvhrUtUvjKAt6N4kL3bHbcArJqTKyjRoVn8A8E@redis:6379
+    depends_on:
+      - redis
     volumes:
       - ./waha_data:/var/lib/waha
     restart: always
+
+  redis:
+      image: redis:latest
+      restart: always
+      command: >
+        redis-server
+        --appendonly yes
+        --save 900 1
+        --save 300 10
+        --save 60 10000
+        --loglevel warning
+        --maxmemory 512mb
+        --maxmemory-policy allkeys-lru
+        --requirepass "dDUdWkYM9Q5GbvhrUtUvjKAt6N4kL3bHbcArJqTKyjRoVn8A8E"
+        --replicaof no one
+        --protected-mode no
+        --bind 0.0.0.0
+      volumes:
+        - redis_data:/data
+      mem_limit: 1g
+      cpus: 1.0
+
+volumes:
+  redis_data:
