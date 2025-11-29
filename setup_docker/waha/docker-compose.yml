@@ -5,6 +5,7 @@ services:
       - "3000:3000"
     environment:
       WAHA_APPS_ENABLED: "true"
+      WAHA_WEBHOOK_ENABLED: "true"
       WAHA_API_KEY: 1SpkA0oE44ZYVgcvfyR7QzY8wAVPKv8PcQUAfa4wQpJmcXw2Eb
       WAHA_API_KEY_PLAIN: 6x9s5d896dFmmR5xfrUU9503cPBtQDtbwL6S1TifflAMhVdGcC
       WAHA_DASHBOARD_USERNAME: nGtM8XUEB4
