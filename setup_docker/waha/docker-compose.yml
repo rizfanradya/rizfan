@@ -16,7 +16,7 @@ services:
     depends_on:
       - redis
     volumes:
-      - ./waha_data:/var/lib/waha
+      - ./waha_data:/app/data
     restart: always
 
   redis:
