@@ -1,0 +1,7 @@
+services:
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: always
+    environment:
+      - NGROK_AUTHTOKEN=2kzX9YPkPexaRs7CLILHb1NKrrp_7nmX19ibeo8aZDkymN9q7
+    command: http --url=evenly-definite-garfish.ngrok-free.app host.docker.internal:80

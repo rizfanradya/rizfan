@@ -1,2 +1,3 @@
 setup_docker/minio/data
 setup_docker/waha/waha_data
+setup_docker/nginx_proxy_manager/data

@@ -1,7 +1,9 @@
+# xtn2n8yhGkV4MswW2HmcQorJor0mUCt4kyYDxq7VYDY9r4yGxX
+
 services:
   npm:
     image: jc21/nginx-proxy-manager:latest
-    restart: unless-stopped
+    restart: always
     ports:
       - "80:80"
       - "81:81"
