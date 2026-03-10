@@ -2,7 +2,7 @@ services:
   ojs:
     image: pkpofficial/ojs:latest
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - ./files:/var/www/files
       - ./public:/var/www/public
