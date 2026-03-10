@@ -1,24 +1,9 @@
 services:
   ojs:
-    image: pkpofficial/ojs:3_4_0
-    container_name: ojs_app
+    image: pkpofficial/ojs:latest
     ports:
       - "8080:80"
-    depends_on:
-      - db
     volumes:
       - ./files:/var/www/files
       - ./public:/var/www/public
       - ./config:/var/www/config
-
-  db:
-    image: mariadb:10.5
-    container_name: ojs_db
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: ojs
-      MYSQL_USER: ojsuser
-      MYSQL_PASSWORD: ojspassword
-    volumes:
-      - ./db_data:/var/lib/mysql
