@@ -4,4 +4,5 @@ services:
     ports:
       - "8081:80"
     volumes:
-      - ./ojs:/var/www
+      - ./ojs:/var/www/html
+      - ./files:/var/www/files
