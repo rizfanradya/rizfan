@@ -1,14 +1,6 @@
-# chmod +x init-ojs.sh
 services:
   ojs:
     image: pkpofficial/ojs:latest
     restart: always
     ports:
       - "8081:80"
-    environment:
-      - BASE_URL=https://ijaih.com
-    volumes:
-      - ./ojs:/var/www/html
-      - ./files:/var/www/files
-      - ./init-ojs.sh:/init-ojs.sh
-    entrypoint: ["/init-ojs.sh"]
