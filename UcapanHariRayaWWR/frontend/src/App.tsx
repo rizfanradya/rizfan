@@ -165,7 +165,7 @@ export default function App() {
           </p>
 
           <a
-            href="https://discord.gg/1430612293648912435"
+            href="https://discord.gg/jahThvWf74"
             target="_blank"
             className="inline-block mt-4 bg-indigo-600 text-white px-6 py-3 rounded-xl"
           >
@@ -249,7 +249,7 @@ export default function App() {
           </p>
 
           <a
-            href="https://discord.gg/1430612293648912435"
+            href="https://discord.gg/jahThvWf74"
             target="_blank"
             className="inline-block mt-4 bg-indigo-600 text-white px-6 py-3 rounded-xl"
           >
