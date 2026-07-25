@@ -41,3 +41,14 @@ https://www.creative-tim.com/product/next-js-tailwind-portfolio-page#
 - sudo mv mc /usr/local/bin/
 - mc alias set localminio http://127.0.0.1:9000 5Ti6XY1tPq6xpnw YGoc9gRCa8GXvZQeLPTuicYqXJa5v7DjD8ju7uPPqxOhJvz4cp
 - mc anonymous set download localminio/music
+
+# Github SSH
+
+ssh-keygen -t ed25519 -C "rizfankusuma@gmail.com"
+cat ~/.ssh/id_ed25519.pub
+git remote set-url origin git@github.com:tribasuki74/backend_pest_control_fastapi.git
+ssh -T git@github.com
+
+# Restore MySQL
+
+docker exec -i mysql_mysql_1 mysql -u root -p'FeNr2MkiAumzE1vJdJcCBB2RxIBR3HvFBi7DlPiiDlQy432VYh' hypesindo < hypesindo.sql
