@@ -49,6 +49,13 @@ cat ~/.ssh/id_ed25519.pub
 git remote set-url origin git@github.com:tribasuki74/backend_pest_control_fastapi.git
 ssh -T git@github.com
 
-# Restore MySQL
+# Restore Database
 
 docker exec -i mysql_mysql_1 mysql -u root -p'FeNr2MkiAumzE1vJdJcCBB2RxIBR3HvFBi7DlPiiDlQy432VYh' hypesindo < hypesindo.sql
+docker exec -e PGPASSWORD='tkfnQYTaS5Ltmtmj7daZhuP9oZHH7yJmER5JNcf8MlVrmRxLzO' -t postgresql_postgres_1 pg_dump -U postgres -d pagora > pagora_backup.sql
+ssh root@91.108.110.44 "docker exec mysql_mysql_1 mysqldump -u root -p'FeNr2MkiAumzE1vJdJcCBB2RxIBR3HvFBi7DlPiiDlQy432VYh' hypesindo_rizfan" > hypesindo_rizfan.sql
+ssh root@91.108.110.44 "docker exec mysql_mysql_1 mysqldump -u root -p'FeNr2MkiAumzE1vJdJcCBB2RxIBR3HvFBi7DlPiiDlQy432VYh' --no-data hypesindo_rizfan" > "hypesindo_rizfan_structure.sql"
+
+# FTP
+
+scp root@91.108.110.44:/root/pagora_backup.sql .
